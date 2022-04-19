@@ -59,6 +59,13 @@ namespace OpeningWeekend
             Console.WriteLine($"\tForgalmazó: {filmek[maxid].forgalmazo}");
             Console.WriteLine($"\tBevétel az első héten: {filmek[maxid].bevel} Ft");
             Console.WriteLine($"\tLátogatók: {filmek[maxid].latogato} fő");
+
+            //7. feladat (6. nincs lol)
+
+            StreamWriter sw = new StreamWriter("stat.csv",false,Encoding.UTF8);
+            sw.WriteLine("");
+            sw.Close();
+
             Console.ReadKey();
 
         }   
