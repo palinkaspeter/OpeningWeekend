@@ -28,8 +28,20 @@ namespace OpeningWeekend
                 filmek.Add(nyitohetvege);
                     }
             //3. feladat
-            Console.WriteLine($"3.feladat: {sorok.Count()}");
+            Console.WriteLine($"3.feladat: Filmek száma az állományban: {sorok.Count()} db");
+
+            //4. feladatt
+            long hetibevetel = 0;
+            foreach (var item in filmek)
+            {
+                if (item.forgalmazo=="UIP")
+                {
+                    hetibevetel += item.bevel;
+                }
+            }
+            Console.WriteLine($"4.feladat:UIP Duna Film forgalmazó 1. hetes bevételének összege: {hetibevetel} Ft");
             Console.ReadKey();
+
         }   
     }
 }
