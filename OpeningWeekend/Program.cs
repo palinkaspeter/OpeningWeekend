@@ -7,7 +7,7 @@ using System.IO;
 
 namespace OpeningWeekend
 {
-    internal class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -40,6 +40,25 @@ namespace OpeningWeekend
                 }
             }
             Console.WriteLine($"4.feladat:UIP Duna Film forgalmazó 1. hetes bevételének összege: {hetibevetel} Ft");
+
+            //5. feladat
+
+            int max=0;
+            int maxid = 0;
+            for (int i = 0; i < filmek.Count; i++)
+            {
+                if (filmek[i].bevel>max)
+                {
+                    max= filmek[i].bevel;
+                    maxid= i;
+                }
+            }
+            Console.WriteLine($"5. feladat: Legtöbb látogató az első héten: ");
+            Console.WriteLine($"\tEredeti cím: {filmek[maxid].eredetiCim}");
+            Console.WriteLine($"\tMagyar cím:{filmek[maxid].magyarCim}");
+            Console.WriteLine($"\tForgalmazó: {filmek[maxid].forgalmazo}");
+            Console.WriteLine($"\tBevétel az első héten: {filmek[maxid].bevel} Ft");
+            Console.WriteLine($"\tLátogatók: {filmek[maxid].latogato} fő");
             Console.ReadKey();
 
         }   
